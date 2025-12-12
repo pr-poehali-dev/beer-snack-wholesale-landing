@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПивСнэк Опт — Пивные закуски оптом по всей России</title>
+    <meta name="description" content="Оптовая продажа пивных закусок: орехи, сухофрукты, вяленое мясо, чипсы, снеки. Выгодные цены, быстрая доставка по России.">
+    <meta name="keywords" content="пивные закуски опт, снеки оптом, орехи опт, сухофрукты опт, вяленое мясо опт">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4BA3C3;
+            --primary-dark: #2E7D9A;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f8f9fa;
+            --white: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero {
+            padding: 150px 20px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        section.alt {
+            background: white;
+        }
+
+        h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text);
+        }
+
+        .grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .card p {
+            color: var(--text-light);
+        }
+
+        .advantage {
+            text-align: center;
+        }
+
+        .advantage-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(75, 163, 195, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 32px;
+        }
+
+        .delivery-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .delivery-card li {
+            padding: 8px 0;
+            color: var(--text-light);
+        }
+
+        .delivery-card li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        footer {
+            background: var(--text);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">ПивСнэк Опт</div>
+            <ul>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#delivery">Доставка</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <a href="#contacts" class="btn">Заказать</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Пивные закуски оптом</h1>
+            <p>Широкий ассортимент снеков для вашего бизнеса. Выгодные цены, надежная доставка.</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn">Смотреть каталог</a>
+                <a href="#contacts" class="btn btn-outline">Получить прайс</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="alt">
+        <div class="container">
+            <h2>Каталог продукции</h2>
+            <div class="grid grid-3">
+                <article class="card">
+                    <div class="card-icon">🥜</div>
+                    <h3>Орехи</h3>
+                    <p>Миндаль, кешью, арахис, фисташки</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🍇</div>
+                    <h3>Сухофрукты</h3>
+                    <p>Изюм, курага, чернослив, финики</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🥩</div>
+                    <h3>Вяленое мясо</h3>
+                    <p>Говядина, свинина, птица</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🥔</div>
+                    <h3>Чипсы</h3>
+                    <p>Классические, со вкусами, премиум</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🍿</div>
+                    <h3>Снеки</h3>
+                    <p>Сухарики, крекеры, кольца луковые</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🦐</div>
+                    <h3>Морепродукты</h3>
+                    <p>Кальмары, креветки сушеные</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="grid grid-4">
+                <div class="advantage">
+                    <div class="advantage-icon">🚚</div>
+                    <h3>Быстрая доставка</h3>
+                    <p>По всей России от 1 дня</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">📦</div>
+                    <h3>Оптовые цены</h3>
+                    <p>Выгодные условия от 10 кг</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">🏆</div>
+                    <h3>Гарантия качества</h3>
+                    <p>Сертифицированная продукция</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">⏰</div>
+                    <h3>Работаем 24/7</h3>
+                    <p>Прием заказов круглосуточно</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="delivery" class="alt">
+        <div class="container">
+            <h2>Условия доставки</h2>
+            <div class="grid grid-2">
+                <div class="card delivery-card">
+                    <h3>📍 География</h3>
+                    <ul>
+                        <li>Москва и МО — от 1 дня</li>
+                        <li>Регионы РФ — от 2-5 дней</li>
+                        <li>ТК на выбор клиента</li>
+                        <li>Самовывоз со склада</li>
+                    </ul>
+                </div>
+                <div class="card delivery-card">
+                    <h3>💰 Условия</h3>
+                    <ul>
+                        <li>Минимальный заказ — 10 кг</li>
+                        <li>Скидки от объема</li>
+                        <li>Оплата после доставки</li>
+                        <li>Работа с НДС и без</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
+            <div class="card" style="max-width: 700px; margin: 0 auto;">
+                <h3>Оставьте заявку</h3>
+                <p style="margin-bottom: 20px;">Мы свяжемся с вами в течение 15 минут</p>
+                <form action="#" method="POST">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                        <input type="text" name="company" placeholder="Название компании">
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" name="phone" placeholder="Телефон" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <textarea name="message" placeholder="Сообщение или вопрос"></textarea>
+                    <button type="submit" class="btn" style="width: 100%;">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ПивСнэк Опт. Все права защищены.</p>
+            <p style="margin-top: 10px;">Оптовая продажа пивных закусок по всей России</p>
+        </div>
+    </footer>
+</body>
+</html>
