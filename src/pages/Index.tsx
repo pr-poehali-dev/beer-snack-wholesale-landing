@@ -57,9 +57,36 @@ const Index = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    
+    try {
+      const response = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        alert(language === 'ru' ? 'Спасибо! Ваша заявка отправлена.' : 
+              language === 'en' ? 'Thank you! Your request has been sent.' : 
+              'გმადლობთ! თქვენი მოთხოვნა გაიგზავნა.');
+        setFormData({ name: '', company: '', phone: '', email: '', message: '' });
+      } else {
+        alert(language === 'ru' ? 'Ошибка отправки. Попробуйте позже.' : 
+              language === 'en' ? 'Sending error. Try again later.' : 
+              'გაგზავნის შეცდომა. სცადეთ მოგვიანებით.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert(language === 'ru' ? 'Ошибка отправки. Попробуйте позже.' : 
+            language === 'en' ? 'Sending error. Try again later.' : 
+            'გაგზავნის შეცდომა. სცადეთ მოგვიანებით.');
+    }
   };
 
   const scrollToSection = (id: string) => {
