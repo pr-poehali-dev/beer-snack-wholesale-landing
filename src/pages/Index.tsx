@@ -15,12 +15,18 @@ const Index = () => {
   });
 
   const categories = [
-    { name: 'Орехи', icon: '🥜', description: 'Миндаль, кешью, арахис, фисташки' },
-    { name: 'Сухофрукты', icon: '🍇', description: 'Изюм, курага, чернослив, финики' },
-    { name: 'Вяленое мясо', icon: '🥩', description: 'Говядина, свинина, птица' },
-    { name: 'Чипсы', icon: '🥔', description: 'Классические, со вкусами, премиум' },
-    { name: 'Снеки', icon: '🍿', description: 'Сухарики, крекеры, кольца луковые' },
-    { name: 'Морепродукты', icon: '🦐', description: 'Кальмары, креветки сушеные' }
+    { name: 'Горбуша соломка вяленая', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/f16df0b2-d901-438e-8410-91fa8426d789.jpg' },
+    { name: 'Сом соломка вяленая', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/7c4019a6-52eb-4818-a598-0267a90b5327.jpg' },
+    { name: 'Таранка с перцем сушёно-вяленая', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/fa06f20e-bc5e-4f39-a311-abddaf17cb68.jpg' },
+    { name: 'Щука соломка вяленая', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/2bed7989-a5c4-4447-8a1b-55284cfc72dd.jpg' },
+    { name: 'Минтай соломка солёно-сушёная', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/f16df0b2-d901-438e-8410-91fa8426d789.jpg' },
+    { name: 'Паутинка из горбуши сушёно-вяленая', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/f16df0b2-d901-438e-8410-91fa8426d789.jpg' },
+    { name: 'Паутинка лососевая с кунжутом сушёная', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/f16df0b2-d901-438e-8410-91fa8426d789.jpg' },
+    { name: 'Соломка Норвежская', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/f16df0b2-d901-438e-8410-91fa8426d789.jpg' },
+    { name: 'Филе леща солёно-сушёное с перцем', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/fa06f20e-bc5e-4f39-a311-abddaf17cb68.jpg' },
+    { name: 'Янтарная с перцем солёно-сушёная кусочки', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/fa06f20e-bc5e-4f39-a311-abddaf17cb68.jpg' },
+    { name: 'Камбала Янтарная вяленая', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/fa06f20e-bc5e-4f39-a311-abddaf17cb68.jpg' },
+    { name: 'Икра горбуши вяленая', image: 'https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/f16df0b2-d901-438e-8410-91fa8426d789.jpg' }
   ];
 
   const advantages = [
@@ -73,12 +79,12 @@ const Index = () => {
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-32 pb-20 px-4 relative bg-cover bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/3595e02e-4903-47f7-88f8-0b9ded6f751b.jpg)' }}>
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in text-white">
             Пивные закуски оптом
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto animate-fade-in">
             Широкий ассортимент снеков для вашего бизнеса. Выгодные цены, надежная доставка.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
@@ -97,11 +103,16 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-12">Каталог продукции</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((category, index) => (
-              <Card key={index} className="transition-all hover:shadow-lg hover:scale-105 cursor-pointer">
+              <Card key={index} className="transition-all hover:shadow-lg hover:scale-105 cursor-pointer overflow-hidden">
+                <div className="aspect-video w-full overflow-hidden bg-muted">
+                  <img 
+                    src={category.image} 
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <CardHeader>
-                  <div className="text-5xl mb-4">{category.icon}</div>
-                  <CardTitle>{category.name}</CardTitle>
-                  <CardDescription>{category.description}</CardDescription>
+                  <CardTitle className="text-lg">{category.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <Button variant="ghost" className="w-full">
