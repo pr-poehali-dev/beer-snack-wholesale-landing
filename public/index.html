@@ -366,6 +366,11 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
+            color: #333;
+        }
+
+        .desktop-only {
+            display: inline-block;
         }
 
         .mobile-menu {
@@ -374,19 +379,21 @@
         }
 
         .mobile-menu.active {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .mobile-menu a {
-            display: block;
-            padding: 12px 0;
-            color: #333;
             text-decoration: none;
+            color: #333;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .mobile-menu .lang-switcher {
-            margin: 20px 0;
-            padding-top: 20px;
+            margin-left: 0;
+            padding: 12px 0;
             border-top: 1px solid #e5e7eb;
         }
 
@@ -431,8 +438,8 @@
                     <a href="en.html">English</a>
                     <a href="ru.html">Русский</a>
                 </div>
+                <a href="#contacts" class="btn">შეკვეთა</a>
             </div>
-            <a href="#contacts" class="btn desktop-only">შეკვეთა</a>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
         <div class="mobile-menu container" id="mobileMenu">
@@ -462,90 +469,66 @@
 
     <section id="catalog" class="bg-gray">
         <div class="container">
-            <h2>პროდუქტის კატალოგი</h2>
+            <h2>პროდუქციის კატალოგი</h2>
             <div class="catalog-grid">
                 <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/gorbusha-768x576.jpg.webp" alt="გამხმარი ორაგული ზოლები" class="card-image">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/gorbusha-768x576.jpg.webp" alt="გორბუშას კალმახი" class="card-image">
                     <div class="card-content">
-                        <h3 class="card-title">გამხმარი ორაგული ზოლები</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                        <div class="card-title">გორბუშას კალმახი</div>
+                        <button class="card-btn" onclick="openWhatsApp('გორბუშას კალმახი')">
+                            <span>შეკვეთა</span>
+                            <span>→</span>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/7c4019a6-52eb-4818-a598-0267a90b5327.jpg" alt="გამხმარი ქაშაპი ზოლები" class="card-image">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/file-768x576.jpg.webp" alt="ფილე" class="card-image">
                     <div class="card-content">
-                        <h3 class="card-title">გამხმარი ქაშაპი ზოლები</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                        <div class="card-title">ფილე</div>
+                        <button class="card-btn" onclick="openWhatsApp('ფილე')">
+                            <span>შეკვეთა</span>
+                            <span>→</span>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/taran-768x576.jpg.webp" alt="გამხმარი ტარანკა წიწაკით" class="card-image">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/kalmar-768x576.jpg.webp" alt="კალმარი" class="card-image">
                     <div class="card-content">
-                        <h3 class="card-title">გამხმარი ტარანკა წიწაკით</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                        <div class="card-title">კალმარი</div>
+                        <button class="card-btn" onclick="openWhatsApp('კალმარი')">
+                            <span>შეკვეთა</span>
+                            <span>→</span>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/2bed7989-a5c4-4447-8a1b-55284cfc72dd.jpg" alt="გამხმარი ქორჭილა ზოლები" class="card-image">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/gorbusha-yantarnaya-768x576.jpg.webp" alt="ქარვისფერი გორბუშა" class="card-image">
                     <div class="card-content">
-                        <h3 class="card-title">გამხმარი ქორჭილა ზოლები</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                        <div class="card-title">ქარვისფერი გორბუშა</div>
+                        <button class="card-btn" onclick="openWhatsApp('ქარვისფერი გორბუშა')">
+                            <span>შეკვეთა</span>
+                            <span>→</span>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/mintai-768x576.jpg.webp" alt="მარილიანი-გამხმარი მინტაის ზოლები" class="card-image">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/gorbush-yuzhnaya-768x576.jpg.webp" alt="სამხრეთ გორბუშა" class="card-image">
                     <div class="card-content">
-                        <h3 class="card-title">მარილიანი-გამხმარი მინტაის ზოლები</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                        <div class="card-title">სამხრეთ გორბუშა</div>
+                        <button class="card-btn" onclick="openWhatsApp('სამხრეთ გორბუშა')">
+                            <span>შეკვეთა</span>
+                            <span>→</span>
+                        </button>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/gorbusha2-768x576.jpg.webp" alt="გამხმარი ორაგულის ქსოვილი" class="card-image">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/vobla-768x576.jpg.webp" alt="ვობლა" class="card-image">
                     <div class="card-content">
-                        <h3 class="card-title">გამხმარი ორაგულის ქსოვილი</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/losos-768x576.jpg.webp" alt="გამხმარი ორაგულის ქსოვილი სეზამით" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">გამხმარი ორაგულის ქსოვილი სეზამით</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/f16df0b2-d901-438e-8410-91fa8426d789.jpg" alt="ნორვეგიული ზოლები" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">ნორვეგიული ზოლები</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/file-lesh-768x576.jpeg.webp" alt="მარილიანი-გამხმარი წაბლის ფილე წიწაკით" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">მარილიანი-გამხმარი წაბლის ფილე წიწაკით</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/jamtar-768x576.jpg.webp" alt="ქარვის წიწაკით ნაჭრები" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">ქარვის წიწაკით ნაჭრები</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/jantar2-768x576.jpg.webp" alt="გამხმარი ქარვის კამბალა" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">გამხმარი ქარვის კამბალა</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/ikra-768x576.jpg.webp" alt="გამხმარი ორაგულის ქავიარი" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">გამხმარი ორაგულის ქავიარი</h3>
-                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                        <div class="card-title">ვობლა</div>
+                        <button class="card-btn" onclick="openWhatsApp('ვობლა')">
+                            <span>შეკვეთა</span>
+                            <span>→</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -554,27 +537,27 @@
 
     <section id="advantages">
         <div class="container">
-            <h2>რატომ ჩვენ</h2>
+            <h2>ჩვენი უპირატესობები</h2>
             <div class="advantages-grid">
+                <div class="advantage">
+                    <div class="advantage-icon">📦</div>
+                    <h3>ფართო ასორტიმენტი</h3>
+                    <p>50+ სახეობის პროდუქცია თქვენი ბიზნესისთვის</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">💰</div>
+                    <h3>მომგებიანი ფასები</h3>
+                    <p>საბითუმო ფასები და მოქნილი ფასდებადების სისტემა</p>
+                </div>
                 <div class="advantage">
                     <div class="advantage-icon">🚚</div>
                     <h3>სწრაფი მიწოდება</h3>
-                    <p>მთელ საქართველოში 1 დღიდან</p>
+                    <p>მიწოდება საქართველოს მასშტაბით</p>
                 </div>
                 <div class="advantage">
-                    <div class="advantage-icon">📦</div>
-                    <h3>საბითუმო ფასები</h3>
-                    <p>მომგებიანი პირობები 10 კგ-დან</p>
-                </div>
-                <div class="advantage">
-                    <div class="advantage-icon">🏆</div>
+                    <div class="advantage-icon">✅</div>
                     <h3>ხარისხის გარანტია</h3>
-                    <p>სერტიფიცირებული პროდუქცია</p>
-                </div>
-                <div class="advantage">
-                    <div class="advantage-icon">⏰</div>
-                    <h3>ვმუშაობთ 24/7</h3>
-                    <p>შეკვეთების მიღება მთელი დღე</p>
+                    <p>მხოლოდ სერტიფიცირებული პროდუქცია</p>
                 </div>
             </div>
         </div>
@@ -582,24 +565,30 @@
 
     <section id="delivery" class="bg-gray">
         <div class="container">
-            <h2>მიწოდების პირობები</h2>
+            <h2>მიწოდება და გადახდა</h2>
             <div class="delivery-grid">
                 <div class="delivery-card">
-                    <h3>📍 გეოგრაფია</h3>
+                    <h3>
+                        <span>🚚</span>
+                        <span>მიწოდება</span>
+                    </h3>
                     <ul>
-                        <li>• ბათუმი — 1 დღიდან</li>
-                        <li>• თბილისი — 1-2 დღიდან</li>
-                        <li>• დანარჩენი საქართველო — 2-3 დღიდან</li>
-                        <li>• თვითგატანა საწყობიდან</li>
+                        <li>✓ თბილისის მასშტაბით</li>
+                        <li>✓ საქართველოს რეგიონებში</li>
+                        <li>✓ უფასო მიწოდება 500 ლარიდან</li>
+                        <li>✓ მიწოდება 1-2 სამუშაო დღეში</li>
                     </ul>
                 </div>
                 <div class="delivery-card">
-                    <h3>💰 პირობები</h3>
+                    <h3>
+                        <span>💳</span>
+                        <span>გადახდა</span>
+                    </h3>
                     <ul>
-                        <li>• მინიმალური შეკვეთა — 10 კგ</li>
-                        <li>• უფასო მიწოდება 50 კგ-დან</li>
-                        <li>• გადახდა ნაღდი ან გადარიცხვით</li>
-                        <li>• ფასდაკლებები მუდმივ კლიენტებს</li>
+                        <li>✓ ნაღდი ანგარიშსწორება</li>
+                        <li>✓ უნაღდო ანგარიშსწორება</li>
+                        <li>✓ ბარტერი</li>
+                        <li>✓ გადადებული გადახდა</li>
                     </ul>
                 </div>
             </div>
@@ -608,55 +597,48 @@
 
     <section id="contacts">
         <div class="container contact-section">
-            <h2>დაგვიკავშირდით</h2>
+            <h2>კონტაქტი</h2>
             <div class="form-card">
-                <form id="contactForm">
+                <form>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="თქვენი სახელი" required>
+                            <input type="text" placeholder="თქვენი სახელი" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="company" placeholder="კომპანიის სახელი">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="ტელეფონი" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="ელ-ფოსტა" required>
+                            <input type="tel" placeholder="ტელეფონი" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="შეკვეთის კომენტარი" rows="4"></textarea>
+                        <input type="email" placeholder="ელ. ფოსტა">
                     </div>
-                    <button type="submit" class="btn" style="width: 100%; font-size: 18px;">განაცხადის გაგზავნა</button>
+                    <div class="form-group">
+                        <textarea placeholder="კომენტარი"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">გაგზავნა</button>
                 </form>
             </div>
 
             <div class="contact-info">
                 <div class="contact-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
                     </svg>
-                    <p>+995 568 081 297</p>
-                    <small>ყოველდღე 9:00-21:00</small>
+                    <p>ტელეფონი</p>
+                    <small>+995 XXX XX XX XX</small>
                 </div>
                 <div class="contact-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
-                    <p>maritimempire@gmail.com</p>
-                    <small>პასუხი 1 საათში</small>
+                    <p>ელ. ფოსტა</p>
+                    <small>info@maritime-empire.ge</small>
                 </div>
                 <div class="contact-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    <p>ბათუმი, Kavtaradze Str</p>
-                    <small>ორშ-პარ 9:00-18:00</small>
+                    <p>მისამართი</p>
+                    <small>თბილისი, საქართველო</small>
                 </div>
             </div>
         </div>
@@ -664,13 +646,13 @@
 
     <footer>
         <div class="container">
-            <p>© 2024 Maritime Empire. ყველა უფლება დაცულია.</p>
+            <p>&copy; 2024 Maritime Empire. ყველა უფლება დაცულია.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/995568081297" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact via WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    <a href="https://wa.me/995XXXXXXXXX" class="whatsapp-btn" target="_blank">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
     </a>
 
@@ -680,44 +662,11 @@
             menu.classList.toggle('active');
         }
 
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
-            
-            try {
-                const response = await fetch('/send-email.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                const result = await response.json();
-
-                if (response.ok && result.success) {
-                    alert('გმადლობთ! თქვენი მოთხოვნა გაიგზავნა.');
-                    e.target.reset();
-                } else {
-                    alert('გაგზავნის შეცდომა. სცადეთ მოგვიანებით.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('გაგზავნის შეცდომა. სცადეთ მოგვიანებით.');
-            }
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+        function openWhatsApp(product) {
+            const phone = '995XXXXXXXXX';
+            const message = `გამარჯობა! დაინტერესებული ვარ: ${product}`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
     </script>
 </body>
 </html>
