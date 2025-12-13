@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maritime Empire - Wholesale Beer Snacks</title>
+    <meta name="description" content="Wide range of snacks for your business. Competitive prices, reliable delivery.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+            margin-left: 16px;
+        }
+
+        .lang-switcher a {
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: #f3f4f6;
+            font-size: 14px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero {
+            padding: 160px 20px 80px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/3595e02e-4903-47f7-88f8-0b9ded6f751b.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 32px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 48px;
+        }
+
+        .bg-gray {
+            background: #f9fafb;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #e5e7eb;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: #2563eb;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .card-btn:hover {
+            background: #f3f4f6;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .advantage {
+            text-align: center;
+        }
+
+        .advantage-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 32px;
+        }
+
+        .advantage h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .advantage p {
+            color: #6b7280;
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .delivery-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .delivery-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .delivery-card ul {
+            list-style: none;
+            color: #6b7280;
+        }
+
+        .delivery-card li {
+            padding: 8px 0;
+        }
+
+        .contact-section {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .contact-item svg {
+            margin: 0 auto 8px;
+            color: #2563eb;
+        }
+
+        .contact-item p {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-item span {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 32px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Maritime Empire</div>
+            <div class="nav-links">
+                <a href="#catalog">Catalog</a>
+                <a href="#advantages">Advantages</a>
+                <a href="#delivery">Delivery</a>
+                <a href="#contacts">Contacts</a>
+                <div class="lang-switcher">
+                    <a href="/ru.html">RU</a>
+                    <a href="/en.html" class="active">EN</a>
+                    <a href="/ka.html">KA</a>
+                </div>
+                <a href="#contacts" class="btn">Order</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Wholesale Beer Snacks</h1>
+            <p>Wide range of snacks for your business. Competitive prices, reliable delivery.</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn">View Catalog</a>
+                <a href="#contacts" class="btn btn-outline">Get Price List</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="bg-gray">
+        <div class="container">
+            <h2>Product Catalog</h2>
+            <div class="catalog-grid">
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/e831f4a8-18f3-4a86-b9ca-66fd318ca85b.jpg" alt="Dried Pink Salmon Strips" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Dried Pink Salmon Strips</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/86281b47-ca34-4ff5-96c9-3c05e10ebdf3.jpg" alt="Dried Catfish Strips" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Dried Catfish Strips</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/fa7ce29e-6d12-4b99-b5d8-e2fa4e17ec61.jpg" alt="Dried Roach with Pepper" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Dried Roach with Pepper</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/4e55aed5-f4cd-496f-bebe-f2eb1aaa166d.jpg" alt="Dried Pike Strips" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Dried Pike Strips</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/0c44f02d-78a1-4b63-8c2d-17ca2c1f8db7.jpg" alt="Salted-Dried Pollock Strips" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Salted-Dried Pollock Strips</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/4fb1ab4b-cb40-4994-90d1-8ae14c797fba.jpg" alt="Dried Pink Salmon Lace" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Dried Pink Salmon Lace</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/90f6e57b-7d12-473b-af9f-e5b9f47f1cbb.jpg" alt="Dried Salmon Lace with Sesame" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Dried Salmon Lace with Sesame</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/4cb2fb4e-b0e3-49e7-87c2-4862eb54c98f.jpg" alt="Norwegian Strips" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Norwegian Strips</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/39f5906f-4fa0-42db-9ec8-a92f39d20f82.jpg" alt="Salted-Dried Bream Fillet with Pepper" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Salted-Dried Bream Fillet with Pepper</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/1a96fa03-69a9-4ff4-81bb-98bbcbfa28fe.jpg" alt="Amber with Pepper Pieces" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Amber with Pepper Pieces</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/b87c6732-a14e-4f07-9d10-48afeef3a76b.jpg" alt="Dried Amber Flounder" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Dried Amber Flounder</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/e51c7c82-3c5b-4856-bf17-8a6ac75a7de2.jpg" alt="Dried Pink Salmon Caviar" class="card-image">
+                    <div class="card-content">
+                        <div class="card-title">Dried Pink Salmon Caviar</div>
+                        <button class="card-btn" onclick="scrollToContact()">
+                            <span>Get Price</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <div class="advantages-grid">
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Throughout Georgia from 1 day</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Wholesale Prices</h3>
+                    <p>Great deals from 10 kg</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <h3>Quality Guarantee</h3>
+                    <p>Certified products</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Open 24/7</h3>
+                    <p>Orders accepted around the clock</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="delivery" class="bg-gray">
+        <div class="container">
+            <h2>Delivery Terms</h2>
+            <div class="delivery-grid">
+                <div class="delivery-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        Geography
+                    </h3>
+                    <ul>
+                        <li>Batumi — from 1 day</li>
+                        <li>Tbilisi — from 1-2 days</li>
+                        <li>Rest of Georgia — from 2-3 days</li>
+                        <li>Pickup from warehouse</li>
+                    </ul>
+                </div>
+                <div class="delivery-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                        Terms
+                    </h3>
+                    <ul>
+                        <li>Minimum order — 10 kg</li>
+                        <li>Free delivery from 50 kg</li>
+                        <li>Cash or transfer payment</li>
+                        <li>Discounts for regular customers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <div class="container contact-section">
+            <h2>Contact Us</h2>
+            <div class="form-card">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="company" name="company" placeholder="Company name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Order comment"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <p>+995 593 42 42 42</p>
+                    <span>Daily 9:00-21:00</span>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m2 7 8.97 5.7a1.94 1.94 0 0 0 2.06 0L22 7"/></svg>
+                    <p>info@maritimeempire.ge</p>
+                    <span>Reply within an hour</span>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <p>Batumi, Georgia</p>
+                    <span>Mon-Fri 9:00-18:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Maritime Empire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToContact() {
+            document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Form submitted:', data);
+            
+            alert('Thank you for your request! We will contact you soon.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
