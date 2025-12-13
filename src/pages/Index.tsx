@@ -33,7 +33,7 @@ const Index = () => {
     {
       icon: 'Truck',
       title: 'Быстрая доставка',
-      description: 'По всей России от 1 дня'
+      description: 'По всей Грузии от 1 дня'
     },
     {
       icon: 'Package',
@@ -67,7 +67,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-primary">ПивСнэк Опт</div>
+            <div className="text-2xl font-bold text-primary">Maritime Empire</div>
             <div className="hidden md:flex gap-8">
               <button onClick={() => scrollToSection('catalog')} className="hover:text-primary transition-colors">Каталог</button>
               <button onClick={() => scrollToSection('advantages')} className="hover:text-primary transition-colors">Преимущества</button>
@@ -155,9 +155,9 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Москва и МО — от 1 дня</li>
-                  <li>• Регионы РФ — от 2-5 дней</li>
-                  <li>• ТК на выбор клиента</li>
+                  <li>• Батуми — от 1 дня</li>
+                  <li>• Тбилиси — от 1-2 дней</li>
+                  <li>• Остальная Грузия — от 2-3 дней</li>
                   <li>• Самовывоз со склада</li>
                 </ul>
               </CardContent>
@@ -248,17 +248,17 @@ const Index = () => {
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
             <div>
               <Icon name="Phone" size={24} className="mx-auto mb-2 text-primary" />
-              <p className="font-semibold">+7 (999) 123-45-67</p>
+              <p className="font-semibold">+995 568 081 297</p>
               <p className="text-sm text-muted-foreground">Ежедневно 9:00-21:00</p>
             </div>
             <div>
               <Icon name="Mail" size={24} className="mx-auto mb-2 text-primary" />
-              <p className="font-semibold">opt@pivsnack.ru</p>
+              <p className="font-semibold">maritimempire@gmail.com</p>
               <p className="text-sm text-muted-foreground">Отвечаем в течение часа</p>
             </div>
             <div>
               <Icon name="MapPin" size={24} className="mx-auto mb-2 text-primary" />
-              <p className="font-semibold">Москва, ул. Складская 15</p>
+              <p className="font-semibold">Батуми, Kavtaradze Str</p>
               <p className="text-sm text-muted-foreground">Пн-Пт 9:00-18:00</p>
             </div>
           </div>
@@ -267,7 +267,7 @@ const Index = () => {
 
       <footer className="bg-muted py-8 px-4 border-t">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p>© 2024 ПивСнэк Опт. Все права защищены.</p>
+          <p>© 2024 Maritime Empire. Все права защищены.</p>
         </div>
       </footer>
     </div>
