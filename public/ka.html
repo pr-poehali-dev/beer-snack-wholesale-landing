@@ -366,6 +366,11 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
+            color: #333;
+        }
+
+        .desktop-only {
+            display: inline-block;
         }
 
         .mobile-menu {
@@ -405,6 +410,14 @@
 
             .mobile-menu-btn {
                 display: block;
+            }
+
+            .btn.desktop-only {
+                display: none;
+            }
+
+            .desktop-only {
+                display: none !important;
             }
 
             .form-row {
