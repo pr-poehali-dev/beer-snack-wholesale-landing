@@ -7,7 +7,7 @@ import Icon from '@/components/ui/icon';
 import { translations, type Language, languageNames } from '@/lib/translations';
 
 const Index = () => {
-  const [language, setLanguage] = useState<Language>('ru');
+  const [language, setLanguage] = useState<Language>('ka');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
