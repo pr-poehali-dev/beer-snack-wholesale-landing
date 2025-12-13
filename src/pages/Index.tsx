@@ -8,6 +8,7 @@ import { translations, type Language, languageNames } from '@/lib/translations';
 
 const Index = () => {
   const [language, setLanguage] = useState<Language>('ru');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -72,6 +73,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-primary">Maritime Empire</div>
+            
             <div className="hidden md:flex gap-8 items-center">
               <button onClick={() => scrollToSection('catalog')} className="hover:text-primary transition-colors">
                 {t.nav.catalog}
@@ -101,8 +103,69 @@ const Index = () => {
                 ))}
               </div>
             </div>
-            <Button onClick={() => scrollToSection('contacts')}>{t.nav.order}</Button>
+            
+            <div className="flex items-center gap-4">
+              <Button className="hidden md:flex" onClick={() => scrollToSection('contacts')}>{t.nav.order}</Button>
+              <button 
+                className="md:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <Icon name={mobileMenuOpen ? "X" : "Menu"} size={24} />
+              </button>
+            </div>
           </div>
+          
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-4 animate-fade-in">
+              <button 
+                onClick={() => { scrollToSection('catalog'); setMobileMenuOpen(false); }} 
+                className="block w-full text-left py-2 hover:text-primary transition-colors"
+              >
+                {t.nav.catalog}
+              </button>
+              <button 
+                onClick={() => { scrollToSection('advantages'); setMobileMenuOpen(false); }} 
+                className="block w-full text-left py-2 hover:text-primary transition-colors"
+              >
+                {t.nav.advantages}
+              </button>
+              <button 
+                onClick={() => { scrollToSection('delivery'); setMobileMenuOpen(false); }} 
+                className="block w-full text-left py-2 hover:text-primary transition-colors"
+              >
+                {t.nav.delivery}
+              </button>
+              <button 
+                onClick={() => { scrollToSection('contacts'); setMobileMenuOpen(false); }} 
+                className="block w-full text-left py-2 hover:text-primary transition-colors"
+              >
+                {t.nav.contacts}
+              </button>
+              
+              <div className="pt-4 border-t">
+                <p className="text-sm text-muted-foreground mb-2">Language / Язык / ენა</p>
+                <div className="flex gap-2">
+                  {(Object.keys(languageNames) as Language[]).map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => setLanguage(lang)}
+                      className={`flex-1 px-3 py-2 rounded-md text-sm transition-colors ${
+                        language === lang
+                          ? 'bg-primary text-white'
+                          : 'bg-muted hover:bg-muted/80'
+                      }`}
+                    >
+                      {languageNames[lang]}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              <Button className="w-full" onClick={() => { scrollToSection('contacts'); setMobileMenuOpen(false); }}>
+                {t.nav.order}
+              </Button>
+            </div>
+          )}
         </div>
       </nav>
 
