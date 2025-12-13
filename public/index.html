@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maritime Empire - საყრდენობელი ლუდის საჭმელები</title>
+    <meta name="description" content="ფართო ასორტიმენტი თქვენი ბიზნესისთვის. მომგებიანი ფასები, საიმედო მიწოდება.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+            margin-left: 16px;
+        }
+
+        .lang-switcher a {
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: #f3f4f6;
+            font-size: 14px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero {
+            padding: 160px 20px 80px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/3595e02e-4903-47f7-88f8-0b9ded6f751b.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 32px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 48px;
+        }
+
+        .bg-gray {
+            background: #f9fafb;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #e5e7eb;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: #2563eb;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .card-btn:hover {
+            background: #f3f4f6;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .advantage {
+            text-align: center;
+        }
+
+        .advantage-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 32px;
+        }
+
+        .advantage h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .advantage p {
+            color: #6b7280;
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .delivery-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .delivery-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .delivery-card ul {
+            list-style: none;
+            color: #6b7280;
+        }
+
+        .delivery-card li {
+            padding: 8px 0;
+        }
+
+        .contact-section {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .contact-item svg {
+            margin: 0 auto 8px;
+            color: #2563eb;
+        }
+
+        .contact-item p {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-item small {
+            color: #6b7280;
+        }
+
+        footer {
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            padding: 32px 20px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background: #20BA5A;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            padding: 20px 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .mobile-menu .lang-switcher {
+            margin: 20px 0;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Maritime Empire</div>
+            <div class="nav-links">
+                <a href="#catalog">კატალოგი</a>
+                <a href="#advantages">უპირატესობები</a>
+                <a href="#delivery">მიწოდება</a>
+                <a href="#contacts">კონტაქტები</a>
+                <div class="lang-switcher">
+                    <a href="ka.html" class="active">ქართული</a>
+                    <a href="en.html">English</a>
+                    <a href="ru.html">Русский</a>
+                </div>
+            </div>
+            <a href="#contacts" class="btn desktop-only">შეკვეთა</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+        <div class="mobile-menu container" id="mobileMenu">
+            <a href="#catalog" onclick="toggleMobileMenu()">კატალოგი</a>
+            <a href="#advantages" onclick="toggleMobileMenu()">უპირატესობები</a>
+            <a href="#delivery" onclick="toggleMobileMenu()">მიწოდება</a>
+            <a href="#contacts" onclick="toggleMobileMenu()">კონტაქტები</a>
+            <div class="lang-switcher">
+                <a href="ka.html" class="active">ქართული</a>
+                <a href="en.html">English</a>
+                <a href="ru.html">Русский</a>
+            </div>
+            <a href="#contacts" class="btn" style="margin-top: 16px;" onclick="toggleMobileMenu()">შეკვეთა</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>საყრდენობელი ლუდის საჭმელები</h1>
+            <p>ფართო ასორტიმენტი თქვენი ბიზნესისთვის. მომგებიანი ფასები, საიმედო მიწოდება.</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn">კატალოგის ნახვა</a>
+                <a href="#contacts" class="btn btn-outline">ფასების მიღება</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="bg-gray">
+        <div class="container">
+            <h2>პროდუქტის კატალოგი</h2>
+            <div class="catalog-grid">
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/gorbusha-768x576.jpg.webp" alt="გამხმარი ორაგული ზოლები" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">გამხმარი ორაგული ზოლები</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/7c4019a6-52eb-4818-a598-0267a90b5327.jpg" alt="გამხმარი ქაშაპი ზოლები" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">გამხმარი ქაშაპი ზოლები</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/taran-768x576.jpg.webp" alt="გამხმარი ტარანკა წიწაკით" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">გამხმარი ტარანკა წიწაკით</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/2bed7989-a5c4-4447-8a1b-55284cfc72dd.jpg" alt="გამხმარი ქორჭილა ზოლები" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">გამხმარი ქორჭილა ზოლები</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/mintai-768x576.jpg.webp" alt="მარილიანი-გამხმარი მინტაის ზოლები" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">მარილიანი-გამხმარი მინტაის ზოლები</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/gorbusha2-768x576.jpg.webp" alt="გამხმარი ორაგულის ქსოვილი" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">გამხმარი ორაგულის ქსოვილი</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/losos-768x576.jpg.webp" alt="გამხმარი ორაგულის ქსოვილი სეზამით" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">გამხმარი ორაგულის ქსოვილი სეზამით</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.poehali.dev/projects/71383bf0-8bf1-4944-9dac-eb6d277035e4/files/f16df0b2-d901-438e-8410-91fa8426d789.jpg" alt="ნორვეგიული ზოლები" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">ნორვეგიული ზოლები</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/file-lesh-768x576.jpeg.webp" alt="მარილიანი-გამხმარი წაბლის ფილე წიწაკით" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">მარილიანი-გამხმარი წაბლის ფილე წიწაკით</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/jamtar-768x576.jpg.webp" alt="ქარვის წიწაკით ნაჭრები" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">ქარვის წიწაკით ნაჭრები</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/jantar2-768x576.jpg.webp" alt="გამხმარი ქარვის კამბალა" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">გამხმარი ქარვის კამბალა</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://рыбныеснеки.рф/wp-content/webp-express/webp-images/uploads/2024/04/ikra-768x576.jpg.webp" alt="გამხმარი ორაგულის ქავიარი" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">გამხმარი ორაგულის ქავიარი</h3>
+                        <button class="card-btn" onclick="location.href='#contacts'">ფასის გაგება 💲</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages">
+        <div class="container">
+            <h2>რატომ ჩვენ</h2>
+            <div class="advantages-grid">
+                <div class="advantage">
+                    <div class="advantage-icon">🚚</div>
+                    <h3>სწრაფი მიწოდება</h3>
+                    <p>მთელ საქართველოში 1 დღიდან</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">📦</div>
+                    <h3>საბითუმო ფასები</h3>
+                    <p>მომგებიანი პირობები 10 კგ-დან</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">🏆</div>
+                    <h3>ხარისხის გარანტია</h3>
+                    <p>სერტიფიცირებული პროდუქცია</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">⏰</div>
+                    <h3>ვმუშაობთ 24/7</h3>
+                    <p>შეკვეთების მიღება მთელი დღე</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="delivery" class="bg-gray">
+        <div class="container">
+            <h2>მიწოდების პირობები</h2>
+            <div class="delivery-grid">
+                <div class="delivery-card">
+                    <h3>📍 გეოგრაფია</h3>
+                    <ul>
+                        <li>• ბათუმი — 1 დღიდან</li>
+                        <li>• თბილისი — 1-2 დღიდან</li>
+                        <li>• დანარჩენი საქართველო — 2-3 დღიდან</li>
+                        <li>• თვითგატანა საწყობიდან</li>
+                    </ul>
+                </div>
+                <div class="delivery-card">
+                    <h3>💰 პირობები</h3>
+                    <ul>
+                        <li>• მინიმალური შეკვეთა — 10 კგ</li>
+                        <li>• უფასო მიწოდება 50 კგ-დან</li>
+                        <li>• გადახდა ნაღდი ან გადარიცხვით</li>
+                        <li>• ფასდაკლებები მუდმივ კლიენტებს</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <div class="container contact-section">
+            <h2>დაგვიკავშირდით</h2>
+            <div class="form-card">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="თქვენი სახელი" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="company" placeholder="კომპანიის სახელი">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="ტელეფონი" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="ელ-ფოსტა" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="შეკვეთის კომენტარი" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; font-size: 18px;">განაცხადის გაგზავნა</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <p>+995 568 081 297</p>
+                    <small>ყოველდღე 9:00-21:00</small>
+                </div>
+                <div class="contact-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <p>maritimempire@gmail.com</p>
+                    <small>პასუხი 1 საათში</small>
+                </div>
+                <div class="contact-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <p>ბათუმი, Kavtaradze Str</p>
+                    <small>ორშ-პარ 9:00-18:00</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Maritime Empire. ყველა უფლება დაცულია.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/995568081297" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            try {
+                const response = await fetch('/send-email.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    alert('გმადლობთ! თქვენი მოთხოვნა გაიგზავნა.');
+                    e.target.reset();
+                } else {
+                    alert('გაგზავნის შეცდომა. სცადეთ მოგვიანებით.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('გაგზავნის შეცდომა. სცადეთ მოგვიანებით.');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
