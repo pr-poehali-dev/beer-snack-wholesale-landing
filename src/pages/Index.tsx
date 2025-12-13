@@ -205,8 +205,8 @@ const Index = () => {
                   <CardTitle className="text-lg">{product}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="ghost" className="w-full">
-                    {t.catalog.more} <Icon name="ChevronRight" size={16} className="ml-2" />
+                  <Button variant="ghost" className="w-full" onClick={() => scrollToSection('contacts')}>
+                    {t.catalog.getPrice} <Icon name="DollarSign" size={16} className="ml-2" />
                   </Button>
                 </CardContent>
               </Card>

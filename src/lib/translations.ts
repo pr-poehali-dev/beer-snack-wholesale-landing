@@ -15,7 +15,7 @@ export const translations = {
     },
     catalog: {
       title: 'Каталог продукции',
-      more: 'Подробнее'
+      getPrice: 'Узнать цену'
     },
     products: [
       'Горбуша соломка вяленая',
@@ -101,7 +101,7 @@ export const translations = {
     },
     catalog: {
       title: 'Product Catalog',
-      more: 'More details'
+      getPrice: 'Get Price'
     },
     products: [
       'Dried Pink Salmon Strips',
@@ -187,7 +187,7 @@ export const translations = {
     },
     catalog: {
       title: 'პროდუქტის კატალოგი',
-      more: 'დეტალები'
+      getPrice: 'ფასის გაგება'
     },
     products: [
       'გამხმარი ორაგული ზოლები',
