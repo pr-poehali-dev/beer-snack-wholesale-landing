@@ -339,43 +339,11 @@
             text-align: center;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #333;
-        }
-
-        .mobile-menu {
-            display: none;
-            padding: 20px 0;
-        }
-
-        .mobile-menu.active {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 12px 0;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .mobile-menu .lang-switcher {
-            margin: 20px 0;
-            padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .desktop-only {
-            display: inline-block;
-        }
-
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: 36px;
             }
@@ -384,19 +352,7 @@
                 font-size: 18px;
             }
 
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .catalog-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -418,19 +374,6 @@
                 </div>
                 <a href="#contacts" class="btn">Order</a>
             </div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-        </div>
-        <div class="mobile-menu container" id="mobileMenu">
-            <a href="#catalog" onclick="toggleMobileMenu()">Catalog</a>
-            <a href="#advantages" onclick="toggleMobileMenu()">Advantages</a>
-            <a href="#delivery" onclick="toggleMobileMenu()">Delivery</a>
-            <a href="#contacts" onclick="toggleMobileMenu()">Contacts</a>
-            <div class="lang-switcher">
-                <a href="/ru.html">RU</a>
-                <a href="/en.html" class="active">EN</a>
-                <a href="/ka.html">KA</a>
-            </div>
-            <a href="#contacts" class="btn" style="margin-top: 16px;" onclick="toggleMobileMenu()">Order</a>
         </div>
     </nav>
 
@@ -696,11 +639,6 @@
     </footer>
 
     <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        }
-
         function scrollToContact() {
             document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
         }

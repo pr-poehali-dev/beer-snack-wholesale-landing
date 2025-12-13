@@ -366,11 +366,6 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #333;
-        }
-
-        .desktop-only {
-            display: inline-block;
         }
 
         .mobile-menu {
@@ -379,9 +374,7 @@
         }
 
         .mobile-menu.active {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
+            display: block;
         }
 
         .mobile-menu a {
@@ -438,8 +431,8 @@
                     <a href="en.html">English</a>
                     <a href="ru.html">Русский</a>
                 </div>
-                <a href="#contacts" class="btn">შეკვეთა</a>
             </div>
+            <a href="#contacts" class="btn desktop-only">შეკვეთა</a>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
         <div class="mobile-menu container" id="mobileMenu">
